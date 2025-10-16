@@ -12,11 +12,11 @@ import {
     AlignLeft,
     AlignCenter,
     AlignRight,
+    Bold,
+    Italic,
+    Underline,
+    ChevronsLeftRight,
 } from 'lucide-react'
-import { BoldIcon } from '@/components/icons/bold'
-import { ItalicIcon } from '@/components/icons/italic'
-import { UnderlineIcon } from '@/components/icons/underline'
-import { ChevronsLeftRightIcon } from '@/components/icons/chevrons-left-right'
 import { Toggle } from '@/components/ui/toggle'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuShortcut, DropdownMenuTrigger } from '@/components/tiptap/dropdown-menu-tiptap'
@@ -76,7 +76,7 @@ const FixedMenu = ({ editor }: FixedMenuProps) => {
                                             {editorState.isHeading3 && <Heading3 className='' />}
                                             {editorState.isOrderedList && <ListOrdered className='' />}
                                             {editorState.isBulletList && <List className='' />}
-                                            {editorState.isCodeBlock && <ChevronsLeftRightIcon className='' />}
+                                            {editorState.isCodeBlock && <ChevronsLeftRight className='' />}
                                             {!editorState.isHeading1 && !editorState.isHeading2 && !editorState.isHeading3 && !editorState.isOrderedList && !editorState.isBulletList && !editorState.isCodeBlock && <Type className='' />}
                                         </Button>
                                     </DropdownMenuTrigger>
@@ -112,7 +112,7 @@ const FixedMenu = ({ editor }: FixedMenuProps) => {
                                             <DropdownMenuShortcut>⌘ ⇧ 8</DropdownMenuShortcut>
                                         </DropdownMenuItem>
                                         <DropdownMenuItem onClick={() => editor.chain().focus().toggleCodeBlock().run()}>
-                                            <ChevronsLeftRightIcon className='' />
+                                            <ChevronsLeftRight className='' />
                                             <span className='text-xs'>Code block</span>
                                             <DropdownMenuShortcut>⌘ ⌥ C</DropdownMenuShortcut>
                                         </DropdownMenuItem>
@@ -139,17 +139,17 @@ const FixedMenu = ({ editor }: FixedMenuProps) => {
                                         </Button>
                                     </DropdownMenuTrigger>
                                     <DropdownMenuContent align='start' side='bottom' sideOffset={4} className='text-xs w-[10rem]'>
-                                        <DropdownMenuItem onClick={() => editor.chain().focus().setTextAlign('left').run()}>
+                                        <DropdownMenuItem onClick={() => editor.commands.setTextAlign('left')}>
                                             <AlignLeft className='' />
                                             <span className='text-xs'>Left</span>
                                             <DropdownMenuShortcut>⌘ ⇧ L</DropdownMenuShortcut>
                                         </DropdownMenuItem>
-                                        <DropdownMenuItem onClick={() => editor.chain().focus().setTextAlign('center').run()}>
+                                        <DropdownMenuItem onClick={() => editor.commands.setTextAlign('center')}>
                                             <AlignCenter className='' />
                                             <span className='text-xs'>Center</span>
                                             <DropdownMenuShortcut>⌘ ⇧ E</DropdownMenuShortcut>
                                         </DropdownMenuItem>
-                                        <DropdownMenuItem onClick={() => editor.chain().focus().setTextAlign('right').run()}>
+                                        <DropdownMenuItem onClick={() => editor.commands.setTextAlign('right')}>
                                             <AlignRight className='' />
                                             <span className='text-xs'>Right</span>
                                             <DropdownMenuShortcut>⌘ ⇧ R</DropdownMenuShortcut>
@@ -172,7 +172,7 @@ const FixedMenu = ({ editor }: FixedMenuProps) => {
                                     pressed={editorState.isBold}
                                     size='sm'
                                 >
-                                    <BoldIcon className='' />
+                                    <Bold className='' />
                                 </Toggle>
                             </TooltipTrigger>
                             <TooltipContent>
@@ -186,7 +186,7 @@ const FixedMenu = ({ editor }: FixedMenuProps) => {
                                     pressed={editorState.isItalic}
                                     size='sm'
                                 >
-                                    <ItalicIcon className='' />
+                                    <Italic className='' />
                                 </Toggle>
                             </TooltipTrigger>
                             <TooltipContent>
@@ -214,7 +214,7 @@ const FixedMenu = ({ editor }: FixedMenuProps) => {
                                     pressed={editorState.isUnderline}
                                     size='sm'
                                 >
-                                    <UnderlineIcon className='' />
+                                    <Underline className='' />
                                 </Toggle>
                             </TooltipTrigger>
                             <TooltipContent>
@@ -228,7 +228,7 @@ const FixedMenu = ({ editor }: FixedMenuProps) => {
                                     pressed={editorState.isCode}
                                     size='sm'
                                 >
-                                    <ChevronsLeftRightIcon className='' />
+                                    <ChevronsLeftRight className='' />
                                 </Toggle>
                             </TooltipTrigger>
                             <TooltipContent>

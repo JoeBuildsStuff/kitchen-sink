@@ -2,9 +2,10 @@
 
 import { useEditor, EditorContent, ReactNodeViewRenderer } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
-import { Underline } from '@tiptap/extension-underline'
+import { Underline as UnderlineExtension } from '@tiptap/extension-underline'
 import { TextAlign } from '@tiptap/extension-text-align'
-import { Placeholder, Gapcursor } from '@tiptap/extensions'
+import { Placeholder } from '@tiptap/extension-placeholder'
+import { Gapcursor } from '@tiptap/extension-gapcursor'
 import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight'
 import { Link } from '@tiptap/extension-link'
 import { Table } from '@tiptap/extension-table'
@@ -26,11 +27,11 @@ import {
     Type,
     AlignLeft,
     GripVertical,
+    Bold,
+    Italic,
+    Underline,
+    ChevronsLeftRight,
 } from 'lucide-react'
-import { BoldIcon } from '@/components/icons/bold'
-import { ItalicIcon } from '@/components/icons/italic'
-import { UnderlineIcon } from '@/components/icons/underline'
-import { ChevronsLeftRightIcon } from '@/components/icons/chevrons-left-right'
 import { Button } from '@/components/ui/button'
 import { Toggle } from '@/components/ui/toggle'
 import { Skeleton } from '@/components/ui/skeleton'
@@ -62,7 +63,7 @@ const Tiptap = ({
   const editor = useEditor({
     extensions: [
         StarterKit,
-        Underline,
+        UnderlineExtension,
         TextAlign.configure({
             types: ['heading', 'paragraph'],
         }),
@@ -175,19 +176,19 @@ const Tiptap = ({
                         </div>
                         <div className='flex flex-row gap-0.5 w-fit'>
                             <Toggle size='sm' disabled>
-                                <BoldIcon className='' />
+                                <Bold className='' />
                             </Toggle>
                             <Toggle size='sm' disabled>
-                                <ItalicIcon className='' />
+                                <Italic className='' />
                             </Toggle>
                             <Toggle size='sm' disabled>
                                 <Strikethrough className='' />
                             </Toggle>
                             <Toggle size='sm' disabled>
-                                <UnderlineIcon className='' />
+                                <Underline className='' />
                             </Toggle>
                             <Toggle size='sm' disabled>
-                                <ChevronsLeftRightIcon className='' />
+                                <ChevronsLeftRight className='' />
                             </Toggle>
                         </div>
                     </div>

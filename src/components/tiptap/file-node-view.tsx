@@ -8,12 +8,12 @@ import { Button } from '@/components/ui/button'
 import { 
   File, 
   AlertCircle,
-  ExternalLink
+  ExternalLink,
+  X,
+  Download
 } from 'lucide-react'
 import { FileNodeAttributes } from './file-node'
-import { XIcon } from '../icons/x'
-import { DownloadIcon } from '../icons/download'
-import Spinner from '../ui/spinner'
+import { Spinner } from '../ui/spinner'
 
 export const FileNodeView = ({ node, updateAttributes, deleteNode, selected }: ReactNodeViewProps) => {
   const attrs = node.attrs as FileNodeAttributes
@@ -145,12 +145,12 @@ export const FileNodeView = ({ node, updateAttributes, deleteNode, selected }: R
                     <ExternalLink className="size-4 text-muted-foreground" />
                   </Button>
                   <Button variant="ghost" size="icon" onClick={handleDownload}>
-                    <DownloadIcon className="text-muted-foreground" />
+                    <Download className="text-muted-foreground" />
                   </Button>
                 </>
               )}
               <Button variant="ghost" size="icon" onClick={handleDelete}>
-                <XIcon className="text-muted-foreground" />
+                <X className="text-muted-foreground" />
               </Button>
             </div>
           </div>
