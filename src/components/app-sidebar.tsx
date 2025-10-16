@@ -12,7 +12,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import { BookOpen, BrainCog, Briefcase } from "lucide-react"
+import { BookOpen, BrainCog, Briefcase, AlertTriangle } from "lucide-react"
 import { SidebarLogo } from "./app-sidebar-logo"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
@@ -33,6 +33,11 @@ const items = [
       name: "Using AI in Practice",
       path: "/slides/using-ai-in-practice",
       icon: Briefcase,
+    },
+    {
+      name: "Prompt Injection",
+      path: "/slides/prompt-injection",
+      icon: AlertTriangle,
     },
 ]
 
