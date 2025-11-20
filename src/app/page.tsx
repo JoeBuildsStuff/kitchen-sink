@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation"
+
 export default function Home() {
-redirect("/slides/intro")
+  redirect("/slides/cyber-espionage-overview")
 }

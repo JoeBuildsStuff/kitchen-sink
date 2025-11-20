@@ -35,13 +35,13 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Providers>
           <AppSidebar />
-          <main className="flex-1 overflow-auto px-4">
-            <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
+          <main className="flex-1 overflow-x-auto overflow-y-auto px-4 relative">
+            <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12 relative">
               <div className="flex items-center gap-2 flex-grow">
                 <SidebarTrigger className="-ml-1" />
                 <DynamicBreadcrumbs />
               </div>
-              <div className="ml-auto border-none">
+              <div className="ml-auto border-none relative">
                 <div className="flex items-center gap-2">
                   <Button variant="ghost" asChild>
                     <Link href="https://github.com/JoeBuildsStuff/navigating-careers" target="_blank" rel="noopener noreferrer">

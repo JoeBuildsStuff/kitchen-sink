@@ -12,7 +12,15 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import { BookOpen, BrainCog, Briefcase, AlertTriangle } from "lucide-react"
+import {
+  BookOpen,
+  BrainCog,
+  Briefcase,
+  AlertTriangle,
+  ShieldAlert,
+  Workflow,
+  Shield,
+} from "lucide-react"
 import { SidebarLogo } from "./app-sidebar-logo"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
@@ -20,25 +28,40 @@ import { cn } from "@/lib/utils"
 // Menu items.
 const items = [
   {
-      name: "Intro",
-      path: "/slides/intro",
-      icon: BookOpen,
-    },
-    {
-      name: "How LLMs Work",
-      path: "/slides/how-llms-work",
-      icon: BrainCog,
-    },
-    {
-      name: "Using AI in Practice",
-      path: "/slides/using-ai-in-practice",
-      icon: Briefcase,
-    },
-    {
-      name: "Prompt Injection",
-      path: "/slides/prompt-injection",
-      icon: AlertTriangle,
-    },
+    name: "Intro",
+    path: "/slides/intro",
+    icon: BookOpen,
+  },
+  {
+    name: "How LLMs Work",
+    path: "/slides/how-llms-work",
+    icon: BrainCog,
+  },
+  {
+    name: "Using AI in Practice",
+    path: "/slides/using-ai-in-practice",
+    icon: Briefcase,
+  },
+  {
+    name: "Prompt Injection",
+    path: "/slides/prompt-injection",
+    icon: AlertTriangle,
+  },
+  {
+    name: "GTG-1002 Overview",
+    path: "/slides/cyber-espionage-overview",
+    icon: ShieldAlert,
+  },
+  {
+    name: "AI Kill Chain",
+    path: "/slides/cyber-espionage-ai-operations",
+    icon: Workflow,
+  },
+  {
+    name: "Defensive Lessons",
+    path: "/slides/cyber-espionage-defenses",
+    icon: Shield,
+  },
 ]
 
 export function AppSidebar() {
