@@ -11,6 +11,7 @@ const focusAreas = [
       "Tight behavioral analytics, throttling, and anomaly detection are needed even when guardrails feel mature.",
       "Anthropic banned abusive accounts mid-investigation and tuned heuristics that flagged high-velocity autonomous requests.",
       "Vendors must assume adversaries will chain prompts, mask tooling, and abuse documentation features to persist.",
+      "Instrument internal portals so mass schema discovery, privilege audits, or surprise service-account creation attempts trigger immediate review—the confirmed GTG-1002 compromise followed exactly that path.",
     ],
   },
   {
@@ -35,6 +36,7 @@ const quickWins = [
   "Instrument LLM usage like any other production system—collect session context, map infrastructure, and watch for agentic feedback loops.",
   "Pair human review with AI-generated runbooks; mandate verification on any credential or vulnerability claim before execution.",
   "Pilot defensive AI copilots in SOC tooling to mirror the attacker's autonomy and close the response gap.",
+  "Continuously rotate and attest privileged portal accounts plus config bundles once telemetry shows large result sets being exfiltrated—GTG-1002 left with hashed credentials, MFA state, and system diagrams in a single sweep.",
 ]
 
 export default function CyberEspionageDefenses() {

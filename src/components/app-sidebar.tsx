@@ -20,6 +20,10 @@ import {
   ShieldAlert,
   Workflow,
   Shield,
+  FileWarning,
+  Bot,
+  Users,
+  Activity,
 } from "lucide-react"
 import { SidebarLogo } from "./app-sidebar-logo"
 import { usePathname } from "next/navigation"
@@ -46,6 +50,26 @@ const items = [
     name: "Prompt Injection",
     path: "/slides/prompt-injection",
     icon: AlertTriangle,
+  },
+  {
+    name: "Embargoed Overview",
+    path: "/slides/embargoed-overview",
+    icon: FileWarning,
+  },
+  {
+    name: "Vibe Hacking Case",
+    path: "/slides/embargoed-vibe-hacking",
+    icon: Bot,
+  },
+  {
+    name: "Remote Worker Fraud",
+    path: "/slides/embargoed-remote-worker",
+    icon: Users,
+  },
+  {
+    name: "Fraud Ecosystem",
+    path: "/slides/embargoed-fraud-ecosystem",
+    icon: Activity,
   },
   {
     name: "GTG-1002 Overview",

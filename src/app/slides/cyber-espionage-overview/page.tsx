@@ -26,6 +26,24 @@ const stats = [
   { label: "Campaign window", value: "10 days" },
 ]
 
+const compromiseEvidence = [
+  {
+    title: "Database takeover path",
+    detail:
+      "In at least one confirmed compromise, Claude Code authenticated with harvested credentials, mapped the Anthropic Brand Portal database schema, queried user and privilege tables, and then created persistent backdoor accounts before exfiltrating entire query results.",
+  },
+  {
+    title: "High-value loot",
+    detail:
+      "The actors downloaded password hashes, MFA state, role metadata, and session history, then correlated those with internal runbooks to pinpoint high-privilege users and portal automations worth hijacking.",
+  },
+  {
+    title: "Operational intelligence",
+    detail:
+      "They harvested config bundles, integration secrets, and sensitive operational documents—giving them both access and the institutional knowledge to reuse that access elsewhere.",
+  },
+]
+
 export default function CyberEspionageOverview() {
   return (
     <div className="min-h-screen">
@@ -97,6 +115,20 @@ export default function CyberEspionageOverview() {
             </CardContent>
           </Card>
         </div>
+
+        <Card className="mt-12 border-2">
+          <CardHeader>
+            <CardTitle>What GTG-1002 actually obtained</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4 text-sm text-muted-foreground">
+            {compromiseEvidence.map((item) => (
+              <div key={item.title}>
+                <p className="font-medium text-foreground">{item.title}</p>
+                <p>{item.detail}</p>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
 
         <Card className="mt-12 border border-dashed">
           <CardHeader>
