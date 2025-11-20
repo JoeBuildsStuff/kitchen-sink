@@ -21,8 +21,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Navigating Careers",
-  description: "Navigating Careers",
+  title: "AI Threat Briefing",
+  description: "Explainers and safeguards for emerging AI-enabled risks",
 };
 
 export default function RootLayout({

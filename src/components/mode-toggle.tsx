@@ -62,7 +62,7 @@ export function ModeToggle({ variant = "dropdown" }: ModeToggleProps) {
 
   // Default to dropdown variant
   return (
-    <DropdownMenu defaultOpen={true}>
+    <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="icon">
           <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
@@ -70,12 +70,7 @@ export function ModeToggle({ variant = "dropdown" }: ModeToggleProps) {
           <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent 
-        align="end" 
-        side="bottom"
-        sideOffset={5}
-        className="z-[9999] min-w-[120px] bg-red-500 border-2 border-blue-500"
-      >
+      <DropdownMenuContent align="end" side="bottom" sideOffset={5}>
         <DropdownMenuItem onClick={() => setTheme("light")}>
           Light
         </DropdownMenuItem>
